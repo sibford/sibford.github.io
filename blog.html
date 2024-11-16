@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #212529;
+        }
+
+        .blog-container {
+            max-width: 1100px;
+            margin: 3rem auto;
+        }
+
+        .blog-container header {
+            padding: 0 2em;
+            text-align: center;
+        }
+
+        .blog-container header hr {
+            width: 25%;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .blog-index {
+            margin-top: 1rem;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            padding: 0 2%;
+        }
+
+        .blog-index .snippet {
+            width: 32%;
+            margin-top: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+        }
+
+        .blog-index .snippet-img {
+            width: 100%;
+        }
+
+        .blog-index .snippet-txt {
+            padding: 0 1em;
+        }
+
+        .blog-index .snippet-txt small {
+            color: #999;
+        }
+
+        @media screen and (max-width: 768px) {
+            .blog-container .snippet {
+                width: 48%;
+            }
+        }
+
+        @media screen and (max-width: 481px) {
+            .blog-container .snippet {
+                width: 98%;
+            }
+
+            .blog-index {
+                justify-content: center;
+            }
+        }
+
+        /* efek untuk hover gambar */
+        .snippet figure {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .snippet-img {
+            transform: rotate(10deg) scale(1.4);
+            transition: .3s ease-in-out;
+        }
+
+        .snippet figure:hover img {
+            transform: rotate(0) scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blog-container">
+        <header>
+            <h1>Update Kegiatan</h1>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, accusantium!</p>
+        </header>
+
+        <div class="blog-index">
+            <div class="snippet">
+                <figure>
+                    <img src="img/blog1.jpg" class="snippet-img" alt="">
+                </figure>
+                <div class="snippet-txt">
+                    <h2>Sehat dengan Buah</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, quam possimus?
+                        Consequatur laboriosam itaque necessitatibus.</p>
+                    <small>Last updated 3 days ago</small>
+                </div>
+            </div>
+            <div class="snippet">
+                <figure>
+                    <img src="img/blog2.jpg" class="snippet-img" alt="">
+                </figure>
+                <div class="snippet-txt">
+                    <h2>Perkebunan Organik</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, quam possimus?
+                        Consequatur laboriosam itaque necessitatibus.</p>
+                    <small>Last updated 2 week ago </small>
+                </div>
+            </div>
+            <div class="snippet">
+                <figure>
+                    <img src="img/blog3.jpg" class="snippet-img" alt="">
+                </figure>
+                <div class="snippet-txt">
+                    <h2>Jajanan Kekinian</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, quam possimus?
+                        Consequatur laboriosam itaque necessitatibus.</p>
+                    <small>Last updated 1 month ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

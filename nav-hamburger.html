@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #3c4542;
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80vw;
+            height: 60px;
+            margin: 0 auto;
+        }
+
+        .logo img {
+            width: 120px;
+            padding-top: 10px;
+        }
+
+        ul {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            padding: 0 2em;
+            line-height: 60px;
+            text-decoration: none;
+            text-transform: uppercase;
+            height: 60px;
+        }
+
+        /* li a.active {
+            color: #FF5C5C;
+            border-bottom: 5px solid #FF5C5C;
+        } */
+
+        li a:hover {
+            color: #FF5C5C;
+            transition: all 0.3s;
+            border-bottom: 5px solid #FF5C5C;
+        }
+
+        /* sembunyikan hamburger icon */
+        header
+        label,
+        #hamburger {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            /* tampilkan hamburger icon */
+            header label {
+                display: inline-block;
+                color: white;
+                font-style: normal;
+                font-size: 2rem;
+                padding: 0.5rem;
+                padding-left: 1rem;
+            }
+        }
+
+        /* susun ulang menu menjadi vertikal */
+        header {
+            width: 100%;
+        }
+
+        nav ul {
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            background-color: #3c4542;
+            padding: 0 2em;
+            text-decoration: none;
+            text-transform: uppercase;
+            height: auto;
+        }
+
+        li a:hover {
+            color: #FF5C5C;
+            border-bottom: none;
+        }
+
+        /* pindahkan posisi logo ke kanan, dan perkecil */
+        .logo {
+            position: absolute;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 80px;
+        }
+
+        /* untuk menampilkan / menyembunyikan menu */
+        nav {
+            display: none;
+        }
+
+        header input:checked~nav {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <label for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="" class="active">Home</a></li>
+                    <li><a href="">Service</a></li>
+                    <li><a href="">Project</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+</body>
+
+</html>

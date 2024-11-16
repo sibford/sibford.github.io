@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #3c4542;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80vw;
+            height: 60px;
+            margin: 0 auto;
+        }
+
+        .logo img {
+            width: 120px;
+            padding-top: 10px;
+        }
+
+        ul {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            padding: 0 2em;
+            line-height: 60px;
+            text-decoration: none;
+            text-transform: uppercase;
+            height: 60px;
+        }
+
+        li a.active {
+            color: #FF5C5C;
+            border-bottom: 5px solid #FF5C5C;
+        }
+
+        li a:hover {
+            color: #FF5C5C;
+            transition: all 0.3s;
+            border-bottom: 5px solid #FF5C5C;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="" class="active">Home</a></li>
+                    <li><a href="">Service</a></li>
+                    <li><a href="">project</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+</body>
+
+</html>

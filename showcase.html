@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body,
+        h1 {
+            padding: 0;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .showcase {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1290px;
+            margin: 0 auto;
+            padding: 2em;
+        }
+
+        .showcase-image,
+        .showcase-text {
+            width: 50%;
+            margin: 1em;
+        }
+
+        .showcase-image img {
+            width: 100%;
+            border: 1px solid silver;
+            padding: 0.3rem;
+            box-shadow: 2px 2px 5px black;
+        }
+
+        @media screen and (max-width: 768px) {
+            .showcase {
+                flex-direction: column;
+                padding: 1em 2em;
+            }
+
+            .showcase-image,
+            .showcase-text {
+                width: auto;
+            }
+        }
+
+        .showcase:nth-child(even) {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="showcase">
+        <div class="showcase-image">
+            <img src="img/showcase1.jpg" alt="">
+        </div>
+        <div class="showcase-text">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+                atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
+                similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum
+                quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
+                cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est,
+                omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus</p>
+            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</p>
+        </div>
+    </section>
+    <section class="showcase">
+        <div class="showcase-text">
+            <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h1>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                exercitationem ullam corporis suscipit laboriosam</p>
+            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</p>
+        </div>
+        <div class="showcase-image">
+            <img src="img/showcase2.jpg" alt="">
+        </div>
+    </section>
+</body>
+
+</html>

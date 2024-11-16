@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #212529;
+            text-align: center;
+        }
+
+        .product-container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            text-align: center;
+        }
+
+        header hr {
+            width: 25%;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        section {
+            margin-top: 2rem;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        section div {
+            width: 25%;
+            padding: 1em 2em;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            section div {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 461px) {
+            section div {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product-container">
+        <header>
+            <h1>Terbesar di Indonesia</h1>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </header>
+
+        <section>
+            <div>
+                <i class="fas fa-monument fa-4x"></i>
+                <h4>Budaya Lokal</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates est beatae earum officiis
+                    nesciunt</p>
+            </div>
+            <div>
+                <i class="fas fa-store fa-4x"></i>
+                <h4>UMKM Untuk Negeri</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates est beatae earum officiis
+                    nesciunt</p>
+            </div>
+            <div>
+                <i class="fas fa-globe fa-4x"></i>
+                <h4>Go Internasional</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates est beatae earum officiis
+                    nesciunt</p>
+            </div>
+            <div>
+                <i class="fas fa-store fa-4x"></i>
+                <h4>1000 peserta</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates est beatae earum officiis
+                    nesciunt</p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

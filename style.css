@@ -1,0 +1,430 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html,
+h1 {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Style navbar */
+.container {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+#nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80vw;
+  height: 60px;
+  margin: 0 auto;
+}
+
+#nav-header .logo img {
+  width: 50px;
+  padding-top: 6px;
+}
+
+#nav-header ul {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#nav-header li a {
+  display: block;
+  color: black;
+  padding: 0 2em;
+  line-height: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 60px;
+}
+
+#nav-header li a.active {
+  color: #ff5c5c;
+  border-bottom: 5px solid #ff5c5c;
+}
+
+#nav-header li a:hover {
+  color: #ff5c5c;
+  transition: all 0.3s;
+  border-bottom: 5px solid #ff5c5c;
+}
+
+/* Sembunyikan hamburger icon */
+#nav-header label,
+#hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Tampilkan hamburger icon */
+  #nav-header label {
+    display: inline-block;
+    color: black;
+    font-style: normal;
+    font-size: 2rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+  }
+
+  /* Susun ulang menjadi vertikal */
+  #nav-header {
+    width: 100%;
+  }
+
+  #nav-header nav ul {
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  #nav-header li a {
+    display: block;
+    color: white;
+    background-color: #3c4542;
+    padding: 0 2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: auto;
+  }
+
+  #nav-header li a:hover {
+    color: #ff5c5c;
+    border-bottom: none;
+  }
+
+  /* Pindahkan posisi logo ke kanan, dan perkecil */
+  .logo {
+    position: absolute;
+    right: 8px;
+    z-index: 1000;
+  }
+
+  .logo img {
+    width: 80px;
+  }
+
+  /* Untuk menampilkan/ menyembunyikan menu */
+  #nav-header nav {
+    display: none;
+  }
+  #nav-header input:checked ~ nav {
+    display: flex;
+  }
+}
+
+/* style hero */
+.hero-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+    url("img/English\ Language\ Course.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  text-align: center;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 4em;
+  margin: 0;
+  text-shadow: 2px 2px black;
+}
+
+.hero-text a {
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1.3em;
+  padding: 0.7em 1.2em;
+  background-color: orangered;
+  color: white;
+  box-shadow: 5px 5px black;
+  font-size: 1.1em;
+}
+
+.hero-text a:hover {
+  background-color: #ff6933;
+}
+
+.hero-container {
+  background-image: url("img/English\ Language\ Course.jpg");
+}
+
+.hero-text {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2em;
+}
+
+/* style showcase */
+.showcase {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.showcase-image,
+.showcase-text {
+  width: 50%;
+  margin: 1em;
+}
+
+.showcase-image img {
+  width: 100%;
+  border: 1px solid silver;
+  padding: 0.3rem;
+  box-shadow: 2px 2px 5px black;
+}
+
+@media screen and (max-width: 768px) {
+  .showcase {
+    flex-direction: column;
+    padding: 1em 2em;
+  }
+
+  .showcase-image,
+  .showcase-text {
+    width: auto;
+  }
+}
+
+.showcase:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+/* style product */
+.product-container {
+  max-width: 1100px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+header hr {
+  width: 25%;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+.product-container section {
+  margin-top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.product-container section div {
+  width: 25%;
+  padding: 1em 2em;
+}
+
+.product-container header h1 {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  section div {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 461px) {
+  .product-container section div {
+    width: 100%;
+  }
+}
+
+/* style blog */
+.blog-container {
+  width: 100%;
+  margin: 3rem auto;
+  background-color: #180161;
+}
+
+.judul-blog,
+.paragraf-blog,
+.isi-blog {
+  color: #ffffff;
+}
+
+.blog-container header {
+  padding: 2rem 2em;
+  text-align: center;
+}
+
+.blog-container header hr {
+  width: 25%;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+.blog-index {
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 2rem 2%;
+}
+
+.blog-index .snippet {
+  width: 32%;
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+}
+
+.blog-index .snippet-img {
+  width: 100%;
+}
+
+.blog-index .snippet-txt {
+  padding: 0 1em;
+}
+
+.blog-index .snippet-txt small {
+  color: #999;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-container .snippet {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .blog-container .snippet {
+    width: 98%;
+  }
+
+  .blog-index {
+    justify-content: center;
+  }
+}
+
+/* efek untuk hover gambar */
+.snippet figure {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.snippet-img {
+  transform: rotate(10deg) scale(1.4);
+  transition: 0.3s ease-in-out;
+}
+
+.snippet figure:hover img {
+  transform: rotate(0) scale(1.1);
+}
+
+/* style footer */
+.footer-container {
+  color: black;
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+}
+
+.footer-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}
+
+.footer-menu {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.footer-menu section {
+  width: 23%;
+  text-align: center;
+}
+
+.footer-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-menu h3 {
+  margin-top: 0;
+}
+
+.logo-container img {
+  width: 65px;
+  /* justify-content: space-between; */
+  /* margin-left: 100px;  */
+}
+
+.footer-copyright {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.footer-copyright a {
+  margin-left: 0.5rem;
+}
+
+.footer-copyright a:hover {
+  text-decoration: none;
+}
+
+.footer-copyright .copyright small{
+  padding-left: 5em;
+}
+
+@media screen and (max-width: 900px) {
+  .footer-menu section {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer-menu section {
+    width: 98%;
+    margin-top: 1rem;
+  }
+
+  .footer-copyright {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .logo-container img {
+    margin-left: 180px;
+  }
+
+  .footer-copyright .copyright small{
+    padding-left: 3px;
+  }
+}

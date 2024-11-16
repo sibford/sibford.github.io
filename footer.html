@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        html, body{
+            padding: 0;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .footer-container{
+            color: white;
+            background-color: #343a40;
+            padding: 2rem 1rem;
+        }
+
+        .footer-container a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer-container a:hover{
+            text-decoration: underline;
+        }
+
+        .footer-menu{
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        .footer-menu section{
+            width: 23%;
+            text-align: center;
+        }
+
+        .footer-menu ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-menu h3{
+            margin-top: 0;
+        }
+
+        .logo-container img{
+            width: 65px;
+        }
+
+        .footer-copyright{
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            padding: 0.5rem;
+        }
+
+        .footer-copyright a{
+            margin-left: 0.5rem ;
+        }
+
+        .footer-copyright a:hover{
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 900px){
+            .footer-menu section{
+                width: 48%;
+            }
+        }
+
+        @media screen and (max-width: 500px){
+            .footer-menu section{
+                width: 98%;
+                margin-top: 1rem;
+            }
+
+            .footer-copyright{
+                margin-top: 1rem;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <footer class="footer-container">
+        <div class="footer-menu">
+            <section>
+                <div class="logo-container">
+                    <a href="#">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit saepe autem a quos eius accusantium
+                    libero veritatis nemo esse commodi.</p>
+            </section>
+
+            <section>
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="#">Activity</a></li>
+                    <li><a href="#">Members</a></li>
+                    <li><a href="#">Groups</a></li>
+                    <li><a href="#">Forums</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Our mission</a></li>
+                    <li><a href="#">Help/Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Hubungi Kami</h3>
+                <ul class="contact">
+                    <li><i class="fas fa-envelope fa-fw"> andre@lezats.com</i></li>
+                    <li><i class="fas fa-phone fa-fw"> (021) 123456</i></li>
+                    <li><i class="fas fa-globe fa-fw"> www.lezats.com</i></li>
+                </ul>
+                <!-- <div class="fas fa-envelope fa-fw"> andre@lezats.com</div>
+                <div class="fas fa-phone fa-fw"> (021) 123456</div>
+                <div class="fas fa-globe fa-fw"> www.lezats.com</div> -->
+            </section>
+        </div>
+
+        <div class="footer-copyright">
+            <div>
+                <small>&copy; LEZATS 2021</small>
+            </div>
+            <div>
+                <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#"><i class="fab fa-google-plus fa-lg"></i></a>
+                <a href="#"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
