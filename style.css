@@ -245,12 +245,6 @@ html {
   border-radius: 8px;
 }
 
-/* header hr {
-  width: 25%;
-  border: 0;
-  border-top: 1px solid #ddd;
-} */
-
 .product-container header hr {
   width: 60px;
   height: 3px;
