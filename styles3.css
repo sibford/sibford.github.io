@@ -209,13 +209,6 @@ li {
   padding: 1rem;
 }
 
-/* .listening-img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 8px 0 0 8px;
-  object-fit: cover;
-} */
-
 .reading-text {
   padding: 1.5rem;
   width: calc(100% - 400px);

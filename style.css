@@ -400,12 +400,6 @@ html {
   background-color: #fff;
 }
 
-/* .judul-blog,
-.paragraf-blog,
-.isi-blog {
-  color: #ffffff;
-} */
-
 .blog-container header h1.judul-blog {
   font-size: 2rem;
   color: #333;
@@ -494,25 +488,6 @@ html {
   background-color: #0056b3;
 }
 
-/* .blog-index .snippet {
-  width: 32%;
-  margin-top: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-} */
-
-/* .blog-index .snippet-img {
-  width: 100%;
-}
-
-.blog-index .snippet-txt {
-  padding: 0 1em;
-}
-
-.blog-index .snippet-txt small {
-  color: #999;
-} */
-
 @media screen and (max-width: 768px) {
   .blog-container .snippet {
     width: 48%;
@@ -546,98 +521,6 @@ html {
   transform: rotate(0) scale(1.1);
 }
 
-/* style footer */
-/* .footer-container {
-  color: black;
-  background-color: #ffffff;
-  padding: 2rem 1rem;
-}
-
-.footer-container a {
-  text-decoration: none;
-  color: black;
-}
-
-.footer-container a:hover {
-  text-decoration: underline;
-}
-
-.footer-menu {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
-
-.footer-menu section {
-  width: 23%;
-  text-align: center;
-}
-
-.footer-menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-menu h3 {
-  margin-top: 0;
-}
-
-.logo-container img {
-  width: 65px;
-  justify-content: space-between;
-  margin-left: 100px; 
-}
-
-.footer-copyright {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 0.5rem;
-}
-
-.footer-copyright a {
-  margin-left: 0.5rem;
-}
-
-.footer-copyright a:hover {
-  text-decoration: none;
-}
-
-.footer-copyright .copyright small{
-  padding-left: 5em;
-}
-
-@media screen and (max-width: 900px) {
-  .footer-menu section {
-    width: 48%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .footer-menu section {
-    width: 98%;
-    margin-top: 1rem;
-  }
-
-  .footer-copyright {
-    margin-top: 1rem;
-    justify-content: center;
-  }
-
-  .logo-container img {
-    margin-left: 180px;
-  }
-
-  .footer-copyright .copyright small{
-    padding-left: 3px;
-  }
-} */
-
 /* Contact Us Page Styling */
 #contact {
   display: flex;
@@ -664,11 +547,6 @@ html {
   border-radius: 8px;
 }
 
-/* .contact-info:hover{
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transform: translateY(-5px);
-} */
-
 .contact-info h2 {
   font-size: 28px;
   margin-bottom: 20px;
@@ -682,21 +560,12 @@ html {
   transition: transform 0.3s ease;
 }
 
-/* .contact-item:hover {
-  transform: translateX(10px);
-} */
-
 .contact-item i {
   font-size: 24px;
   color: #f4f4f4;
   margin-right: 15px;
   transition: color 0.3s ease, tranform 0.3s ease;
 }
-
-/* .contact-item:hover i {
-  color: #007bff;
-  transform: scale(1.2);
-} */
 
 .contact-item a {
   /* text-decoration: none; */
@@ -713,10 +582,6 @@ html {
   color: #f4f4f4;
   transition: color 0.3s ease, transform 0.3s ease;
 }
-
-/* .contact-item span:hover {
-  color: #007bff;
-} */
 
 .map {
   flex: 1;
