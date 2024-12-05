@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing</title>
+    <link rel="stylesheet" href="styles4.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="container">
+        <header id="nav-header">
+            <label for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger">
+            <div class="logo">
+                <img src="img/sibford.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/listening.html">Listening</a></li>
+                    <li><a href="/reading.html">Reading</a></li>
+                    <li><a href="/writing.html">Writing</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+    <!-- Header Section -->
+    <div class="writing-header">
+        <h1 class="header">Writing Practice for English Tests</h1>
+        <p class="paragraph-header">Boost your writing skills with focused exercises for TOEFL, TOEIC, and IELTS.</p>
+    </div>
+
+    <!-- Listening Content Section -->
+    <div class="writing-content">
+        <!-- TOEFL Listening Section -->
+        <section class="writing-section">
+            <!-- <img src="img/toefl-listening.jpg" alt="TOEFL Listening" class="listening-img"> -->
+            <div class="writing-text">
+                <h2>TOEFL Writing Practice</h2>
+                <p>Develop your TOEFL writing skills with tasks that include:</p>
+                <ul>
+                    <li>Integrated writing tasks based on reading and listening</li>
+                    <li>Independent writing tasks on general topics</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TOEIC Listening Section -->
+        <section class="writing-section">
+            <!-- <img src="img/toeic-listening.jpg" alt="TOEIC Listening" class="listening-img"> -->
+            <div class="writing-text">
+                <h2>TOEIC Writing Practice</h2>
+                <p>Improve your TOEIC writing with exercises on business topics, focusing on:</p>
+                <ul>
+                    <li>Writing emails and professional messages</li>
+                    <li>Summarizing and organizing information</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Additional Listening Exercises -->
+        <section class="writing-section">
+            <!-- <img src="img/general-listening.jpg" alt="General Listening Practice" class="listening-img"> -->
+            <div class="writing-text">
+                <h2>IELTS Writing Exercises</h2>
+                <p>Prepare for the IELTS writing test with tasks that cover:</p>
+                <ul>
+                    <li>Describing visual information in charts and graphs</li>
+                    <li>Writing essays expressing opinions on various topics</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-container">
+        <p>&copy; 2024 Sibford Active English. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll("#nav-header nav ul li a"); // Ambil semua tautan navigasi
+            const currentPath = window.location.pathname; // Ambil path URL saat ini
+    
+            navLinks.forEach(link => {
+                // Jika href link cocok dengan path URL, tambahkan class "active"
+                if (link.getAttribute("href") === currentPath) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

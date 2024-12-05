@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="container">
+        <header id="nav-header">
+            <label for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger">
+            <div class="logo">
+                <img src="img/sibford.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/listening.html">Listening</a></li>
+                    <li><a href="/reading.html">Reading</a></li>
+                    <li><a href="/writing.html">Writing</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+    <!-- Header Section -->
+    <div class="listening-header">
+        <h1 class="header">Listening Materials for English Learning</h1>
+        <p class="paragraph-header">Improve your listening skills with tailored materials for TOEFL, TOEIC, and other English tests.</p>
+    </div>
+
+    <!-- Listening Content Section -->
+    <div class="listening-content">
+        <!-- TOEFL Listening Section -->
+        <section class="listening-section">
+            <!-- <img src="img/toefl-listening.jpg" alt="TOEFL Listening" class="listening-img"> -->
+            <div class="listening-text">
+                <h2>TOEFL Listening Practice</h2>
+                <p>TOEFL listening materials include conversations and lectures that are designed to simulate a
+                    university classroom experience. You'll listen to dialogues and monologues, then answer questions
+                    about them. These practice exercises help improve comprehension, focusing on:</p>
+                <ul>
+                    <li>Understanding main ideas and supporting details</li>
+                    <li>Recognizing speakers' purposes and attitudes</li>
+                    <li>Connecting information from various parts of the talk</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TOEIC Listening Section -->
+        <section class="listening-section">
+            <!-- <img src="img/toeic-listening.jpg" alt="TOEIC Listening" class="listening-img"> -->
+            <div class="listening-text">
+                <h2>TOEIC Listening Practice</h2>
+                <p>TOEIC listening materials are ideal for improving English used in the workplace. The materials
+                    feature everyday conversations, work meetings, and presentations. They help you prepare by focusing
+                    on:</p>
+                <ul>
+                    <li>Understanding instructions and important details</li>
+                    <li>Identifying the context of conversations</li>
+                    <li>Interpreting intonations and identifying requests</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Additional Listening Exercises -->
+        <section class="listening-section">
+            <!-- <img src="img/general-listening.jpg" alt="General Listening Practice" class="listening-img"> -->
+            <div class="listening-text">
+                <h2>General Listening Exercises</h2>
+                <p>Besides test-specific materials, we offer general listening exercises to enhance your overall English
+                    listening abilities. These include:</p>
+                <ul>
+                    <li>News and media clips for real-world vocabulary</li>
+                    <li>Educational podcasts for accent recognition</li>
+                    <li>Conversations on various topics for contextual learning</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-container">
+        <p>&copy; 2024 Sibford Active English. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll("#nav-header nav ul li a"); // Ambil semua tautan navigasi
+            const currentPath = window.location.pathname; // Ambil path URL saat ini
+    
+            navLinks.forEach(link => {
+                // Jika href link cocok dengan path URL, tambahkan class "active"
+                if (link.getAttribute("href") === currentPath) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

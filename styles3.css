@@ -1,0 +1,265 @@
+/* Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+h2 {
+  color: #180161;
+}
+
+
+li {
+  color: #333;
+}
+
+
+/* Style navbar */
+.container {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1.5px solid #ddd;
+  }
+  
+  #nav-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80vw;
+    height: 60px;
+    margin: 0 auto;
+  }
+  
+  #nav-header .logo img {
+    width: 50px;
+    padding-top: 6px;
+  }
+  
+  #nav-header ul {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+  }
+  
+  #nav-header li {
+    position: relative;
+  }
+  
+  #nav-header li a {
+    display: block;
+    color: black;
+    padding: 0 2em;
+    line-height: 60px;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 60px;
+    position: relative;
+  }
+  
+  #nav-header li a.active {
+    color: #180161;
+    border-bottom: 5px solid #180161;
+    transition: all 0.3s ease; /* Efek transisi */
+  }
+  
+  /* Tambahkan indikator di bawah tautan aktif */
+  #nav-header li a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #180161;
+    transition: all 0.3s ease;
+  }
+  
+  #nav-header li a:hover {
+    color: #180161;
+    transition: all 0.3s ease;
+    /* border-bottom: 5px solid #180161; */
+  }
+  
+  /* Sembunyikan hamburger icon */
+  #nav-header label,
+  #hamburger {
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container{
+      width: 100%;
+      /* padding: 0 1rem; */
+    }
+
+    /* Tampilkan hamburger icon */
+    #nav-header label {
+      display: inline-block;
+      color: black;
+      font-style: normal;
+      font-size: 2rem;
+      padding: 0.5rem;
+      padding-left: 25.9rem;
+    }
+  
+    /* Susun ulang menjadi vertikal */
+    #nav-header {
+      width: 100%;
+    }
+  
+    #nav-header nav ul {
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+    }
+  
+    #nav-header li a {
+      display: block;
+      color: white;
+      background-color: #3c4542;
+      padding: 0 2em;
+      text-decoration: none;
+      text-transform: uppercase;
+      height: auto;
+    }
+  
+    #nav-header li a:hover {
+      color: #ff5c5c;
+      border-bottom: none;
+    }
+  
+    /* Pindahkan posisi logo ke kanan, dan perkecil */
+    .logo {
+      position: absolute;
+      left: 10px;
+      z-index: 1000;
+    }
+  
+    .logo img {
+      width: 80px;
+    }
+  
+    /* Untuk menampilkan/ menyembunyikan menu */
+    #nav-header nav {
+      display: none;
+    }
+    #nav-header input:checked ~ nav {
+      display: flex;
+    }
+  }
+
+
+/* Header Section */
+.reading-header {
+  background-color: #180161;
+  /* color: #fff; */
+  padding: 8rem 2rem 5rem;
+  text-align: center;
+}
+
+.header{
+    color: #f0f0f0;
+}
+
+.paragraph-header{
+    color: #ddd;
+}
+
+.reading-header h1 {
+  font-size: 2.5rem;
+}
+
+.reading-header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Content Section */
+.reading-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.reading-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
+  padding: 1rem;
+}
+
+/* .listening-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px 0 0 8px;
+  object-fit: cover;
+} */
+
+.reading-text {
+  padding: 1.5rem;
+  width: calc(100% - 400px);
+  overflow-wrap: break-word;
+}
+
+.reading-text h2 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+/* Footer Section */
+.footer-container {
+  background-color: #0f003f;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer-container p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reading-section {
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  .reading-text {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reading-text {
+    width: 100%;
+    padding: 1rem;
+  }
+}

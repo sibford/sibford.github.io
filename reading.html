@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="container">
+        <header id="nav-header">
+            <label for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger">
+            <div class="logo">
+                <img src="img/sibford.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/listening.html">Listening</a></li>
+                    <li><a href="/reading.html">Reading</a></li>
+                    <li><a href="/writing.html">Writing</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+    <!-- Header Section -->
+    <div class="reading-header">
+        <h1 class="header">Reading Practice for English Tests</h1>
+        <p class="paragraph-header">Sharpen your reading skills for TOEFL, TOEIC, and IELTS with our specially designed practice materials.</p>
+    </div>
+
+    <!-- Listening Content Section -->
+    <div class="reading-content">
+        <!-- TOEFL Listening Section -->
+        <section class="reading-section">
+            <!-- <img src="img/toefl-listening.jpg" alt="TOEFL Listening" class="listening-img"> -->
+            <div class="reading-text">
+                <h2>TOEFL Reading Practice</h2>
+                <p>Improve your TOEFL reading with passages on academic topics and exercises focused on:</p>
+                <ul>
+                    <li>Understanding main ideas and supporting details</li>
+                    <li>Vocabulary in context</li>
+                    <li>Drawing inferences</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TOEIC Listening Section -->
+        <section class="reading-section">
+            <!-- <img src="img/toeic-listening.jpg" alt="TOEIC Listening" class="listening-img"> -->
+            <div class="reading-text">
+                <h2>TOEIC Reading Practice</h2>
+                <p>Build your TOEIC reading skills with materials focusing on business and workplace language, covering:</p>
+                <ul>
+                    <li>General and specific information</li>
+                    <li>Written instructions</li>
+                    <li>Business communication vocabulary</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Additional Listening Exercises -->
+        <section class="reading-section">
+            <!-- <img src="img/general-listening.jpg" alt="General Listening Practice" class="listening-img"> -->
+            <div class="reading-text">
+                <h2>IELTS Reading Exercises</h2>
+                <p>Practice for the IELTS reading exam with a variety of topics, focusing on:</p>
+                <ul>
+                    <li>Understanding writer’s perspective</li>
+                    <li>Locating and interpreting details</li>
+                    <li>Summarizing information</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-container">
+        <p>&copy; 2024 Sibford Active English. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll("#nav-header nav ul li a"); // Ambil semua tautan navigasi
+            const currentPath = window.location.pathname; // Ambil path URL saat ini
+    
+            navLinks.forEach(link => {
+                // Jika href link cocok dengan path URL, tambahkan class "active"
+                if (link.getAttribute("href") === currentPath) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
