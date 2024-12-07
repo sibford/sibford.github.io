@@ -89,23 +89,23 @@
         </header>
 
         <section id="service">
-            <div>
+            <div class="scroll-animation">
                 <i class="fas fa-book fa-4x"></i>
                 <h4>Structured Material</h4>
                 <p class="paragraph-service">The material is arranged in a structured manner to facilitate
                     understanding and effective learning</p>
             </div>
-            <div>
+            <div class="scroll-animation">
                 <i class="fas fa-comment-alt fa-4x"></i>
                 <h4>As Requested</h4>
                 <p class="paragraph-service">The learning approach is flexible and can be adapted to your needs</p>
             </div>
-            <div>
+            <div class="scroll-animation">
                 <i class="fas fa-handshake fa-4x"></i>
                 <h4>Direct Learning</h4>
                 <p class="paragraph-service">A direct learning method that is interactive and results-oriented</p>
             </div>
-            <div>
+            <div class="scroll-animation">
                 <i class="fas fa-users fa-4x"></i>
                 <h4>Experienced Teacher</h4>
                 <p class="paragraph-service">Taught by experienced teaching staff who are experts in their fields
@@ -208,6 +208,7 @@
             const sections = document.querySelectorAll("section"); // Ambil semua bagian halaman
             const navLinks = document.querySelectorAll("#nav-header nav ul li a"); // Ambil semua tautan di navigasi
             const offset = 50; // Offset jika ada header tetap
+            const elements = document.querySelectorAll(".scroll-animation");
 
             // Fungsi untuk mengaktifkan tautan yang sesuai dengan bagian yang terlihat
             function activateLink() {
@@ -236,6 +237,22 @@
                 );
                 if (activeLink) activeLink.classList.add("active");
             }
+
+            // Fungsi untuk menangani scroll
+  const handleScroll = () => {
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect(); // Dapatkan posisi elemen
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("show"); // Jika elemen sudah ada dalam viewport, tambahkan class "show"
+      }
+    });
+  };
+
+  // Event listener untuk scroll
+  window.addEventListener("scroll", handleScroll);
+
+  // Panggil fungsi handleScroll saat pertama kali dimuat untuk memeriksa elemen yang sudah dalam viewport
+  handleScroll();
 
             // Panggil fungsi untuk setiap scroll
             window.addEventListener("scroll", activateLink);

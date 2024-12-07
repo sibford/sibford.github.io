@@ -87,7 +87,10 @@ html {
     font-style: normal;
     font-size: 2rem;
     padding: 0.5rem;
-    padding-left: 17.5rem;
+    position: absolute;
+    right: 1rem;
+    z-index: 1001;
+    cursor: pointer;
   }
 
   /* Susun ulang menjadi vertikal */
@@ -132,7 +135,7 @@ html {
   /* Pindahkan posisi logo ke kanan, dan perkecil */
   .logo {
     position: absolute;
-    left: 0.5rem;
+    left: 1rem;
     z-index: 1000;
   }
 
@@ -201,7 +204,7 @@ html {
 .showcase {
   display: flex;
   justify-content: space-between;
-  max-width: 1290px;
+  max-width: full;
   margin: 0 auto;
   padding: 2em;
 }
@@ -271,7 +274,7 @@ html {
   text-align: center;
   position: relative;
   overflow: hidden;
-  touch-action: manipulation; /*memastikan interaksi pada perangkat sentuh*/
+  touch-action: manipulation; /* memastikan interaksi pada perangkat sentuh */
 }
 
 .product-container header h1 {
@@ -314,7 +317,7 @@ html {
 
 /* hover dan sentuh */
 .product-container section div:hover i,
-.product-container section div:active {
+.product-container section div:active i{
   color: #0056b3;
   transform: rotate(15deg); /*efek rotasi*/
 }
@@ -372,6 +375,18 @@ html {
     padding: 15px;
     margin: 10px 0;
   }
+}
+
+/* Efek animasi scroll */
+.scroll-animation {
+  opacity: 0; /* Elemen tidak terlihat awalnya */
+  transform: translateY(50px); /* Bergeser ke bawah */
+  transition: all 0.5s ease; /* Efek transisi smooth */
+}
+
+.scroll-animation.show {
+  opacity: 1; /* Elemen terlihat */
+  transform: translateY(0); /* Kembali ke posisi normal */
 }
 
 

@@ -25,144 +25,141 @@ li {
 
 /* Style navbar */
 .container {
-    background-color: rgb(255, 255, 255);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 1.5px solid #ddd;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek timbul */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+#nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80vw;
+  height: 60px;
+  margin: 0 auto;
+}
+
+#nav-header .logo img {
+  width: 50px;
+  padding-top: 6px;
+}
+
+#nav-header ul {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#nav-header li a {
+  display: block;
+  color: black;
+  padding: 0 2em;
+  line-height: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 60px;
+}
+
+#nav-header li a.active {
+  color: #180161;
+  border-bottom: 5px solid #180161;
+  transition: all 0.3s ease;
+}
+
+#nav-header li a:hover {
+  color: #180161;
+  transition: all 0.3s;
+  border-bottom: 5px solid #180161;
+}
+
+/* Sembunyikan hamburger icon */
+#nav-header label,
+#hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Tampilkan hamburger icon */
+  #nav-header label {
+    display: inline-block;
+    color: black;
+    font-style: normal;
+    font-size: 2rem;
+    padding: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    z-index: 1001;
+    cursor: pointer;
   }
-  
+
+  /* Susun ulang menjadi vertikal */
   #nav-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80vw;
-    height: 60px;
-    margin: 0 auto;
+    width: 100%;
   }
-  
-  #nav-header .logo img {
-    width: 50px;
-    padding-top: 6px;
+
+  #nav-header nav ul {
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
   }
-  
-  #nav-header ul {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    position: relative;
-  }
-  
-  #nav-header li {
-    position: relative;
-  }
-  
+
   #nav-header li a {
     display: block;
-    color: black;
+    color: white;
+    background-color: #180161;
     padding: 0 2em;
-    line-height: 60px;
     text-decoration: none;
     text-transform: uppercase;
-    height: 60px;
-    position: relative;
+    height: auto;
+    transition: all 0.3s ease-in-out; /* Tambahkan efek transisi */
   }
-  
-  #nav-header li a.active {
-    color: #180161;
-    border-bottom: 5px solid #180161;
-    transition: all 0.3s ease; /* Efek transisi */
-  }
-  
-  /* Tambahkan indikator di bawah tautan aktif */
-  #nav-header li a.active::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background-color: #180161;
-    transition: all 0.3s ease;
-  }
-  
+
   #nav-header li a:hover {
-    color: #180161;
-    transition: all 0.3s ease;
-    /* border-bottom: 5px solid #180161; */
+    color: #007bff; /* Warna saat di-hover */
+    background-color: #140144; /* Warna latar belakang saat hover */
+    border-bottom: none;
+    transition: all 0.3s ease-in-out;
   }
-  
-  /* Sembunyikan hamburger icon */
-  #nav-header label,
-  #hamburger {
+
+  #nav-header li a.active {
+    color: #007bff; /* Warna tulisan active */
+    background-color: #140144; /* Warna latar active */
+    border-left: 5px solid #0056b3; /* Tambahkan indikator */
+    border-bottom: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Pindahkan posisi logo ke kanan, dan perkecil */
+  .logo {
+    position: absolute;
+    left: 1rem;
+    z-index: 1000;
+  }
+
+  .logo img {
+    width: 80px;
+  }
+
+  /* Untuk menampilkan/ menyembunyikan menu */
+  #nav-header nav {
     display: none;
   }
-  
-  @media screen and (max-width: 768px) {
-    .container{
-      width: 100%;
-      /* padding: 0 1rem; */
-    }
-
-    /* Tampilkan hamburger icon */
-    #nav-header label {
-      display: inline-block;
-      color: black;
-      font-style: normal;
-      font-size: 2rem;
-      padding: 0.5rem;
-      padding-left: 25.9rem;
-    }
-  
-    /* Susun ulang menjadi vertikal */
-    #nav-header {
-      width: 100%;
-    }
-  
-    #nav-header nav ul {
-      flex-direction: column;
-      width: 100%;
-      position: absolute;
-      top: 60px;
-      left: 0;
-    }
-  
-    #nav-header li a {
-      display: block;
-      color: white;
-      background-color: #3c4542;
-      padding: 0 2em;
-      text-decoration: none;
-      text-transform: uppercase;
-      height: auto;
-    }
-  
-    #nav-header li a:hover {
-      color: #ff5c5c;
-      border-bottom: none;
-    }
-  
-    /* Pindahkan posisi logo ke kanan, dan perkecil */
-    .logo {
-      position: absolute;
-      left: 10px;
-      z-index: 1000;
-    }
-  
-    .logo img {
-      width: 80px;
-    }
-  
-    /* Untuk menampilkan/ menyembunyikan menu */
-    #nav-header nav {
-      display: none;
-    }
-    #nav-header input:checked ~ nav {
-      display: flex;
-    }
+  #nav-header input:checked ~ nav {
+    display: flex;
   }
+}
 
 
 /* Header Section */
