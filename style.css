@@ -269,12 +269,19 @@ html {
   margin: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease; 
   background-color: #f4f4f4;
   text-align: center;
   position: relative;
   overflow: hidden;
-  touch-action: manipulation; /* memastikan interaksi pada perangkat sentuh */
+  opacity: 0;
+  transform: translateY(50px);
+  /* touch-action: manipulation; memastikan interaksi pada perangkat sentuh */
+}
+
+.product-container section div.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .product-container header h1 {
@@ -375,18 +382,6 @@ html {
     padding: 15px;
     margin: 10px 0;
   }
-}
-
-/* Efek animasi scroll */
-.scroll-animation {
-  opacity: 0; /* Elemen tidak terlihat awalnya */
-  transform: translateY(50px); /* Bergeser ke bawah */
-  transition: all 0.5s ease; /* Efek transisi smooth */
-}
-
-.scroll-animation.show {
-  opacity: 1; /* Elemen terlihat */
-  transform: translateY(0); /* Kembali ke posisi normal */
 }
 
 
