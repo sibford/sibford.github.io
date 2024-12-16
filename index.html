@@ -132,9 +132,7 @@
                     </figure>
                     <div class="snippet-txt">
                         <h2 class="isi-blog">Listening</h2>
-                        <p class="paragraf-blog">Listening materials are given to people who want to get a certificate
-                            or
-                            take an exam</p>
+                        <p class="paragraf-blog">Listening materials are designed to help individuals achieve their goals by obtaining certificates and improving their skills</p>
                         <button type="button" class="btn-blog"><a href="/listening.html" class="read-more">Read
                                 More</a></button>
                     </div>
@@ -145,8 +143,7 @@
                     </figure>
                     <div class="snippet-txt">
                         <h2 class="isi-blog">Reading</h2>
-                        <p class="paragraf-blog">Reading materials are used to improve the quality of correct English
-                            reading</p>
+                        <p class="paragraf-blog">Reading activities are structured to enhance your English reading skills while focusing on accuracy and comprehension</p>
                         <button type="button" class="btn-blog"><a href="/reading.html" class="read-more">Read
                                 More</a></button>
                     </div>
@@ -157,9 +154,7 @@
                     </figure>
                     <div class="snippet-txt">
                         <h2 class="isi-blog">Writing</h2>
-                        <p class="paragraf-blog">Writing materials are used for student documentation so they don't
-                            quickly
-                            forget</p>
+                        <p class="paragraf-blog">Writing materials are designed to document and reinforce what you've learned, ensuring you retain essential knowledge</p>
                         <button type="button" class="btn-blog"><a href="/writing.html" class="read-more">Read
                                 More</a></button>
                     </div>
@@ -214,6 +209,7 @@
             const navLinks = document.querySelectorAll("#nav-header nav ul li a"); // Ambil semua tautan di navigasi
             const offset = 50; // Offset jika ada header tetap
             const elements = document.querySelectorAll(".product-container section div");
+            const blogElements = document.querySelectorAll(".snippet");
 
             const handleScroll = () => {
                 elements.forEach((el, index) => {
@@ -224,7 +220,7 @@
                         // tambahkan delay animasi berdasarkan urutan
                         setTimeout(() => {
                             el.classList.add("show");
-                        }, index * 150); // elemen muncul satu persatu dengan jeda
+                        }, index * 200); // elemen muncul satu persatu dengan jeda
                     } else {
                         el.classList.remove("show"); // hilangkan jika keluar viewport
                     }
@@ -236,6 +232,25 @@
 
             // Jalankan sekali saat halaman pertama kali dimuat
             handleScroll();
+
+            const showOnScroll = () => {
+                blogElements.forEach((el2, index2) => {
+                    const rect = el2.getBoundingClientRect();
+
+                    if (rect.top < window.innerHeight - 100) {
+                        setTimeout(() => {
+                            el2.classList.add("show");
+                        }, index2 * 200); // Tambahkan delay 1 detik per elemen
+                    } else {
+                        el2.classList.remove("show"); // Hilangkan jika keluar viewport
+                    }
+                });
+            };
+
+            window.addEventListener("scroll", showOnScroll);
+
+            // Jalankan saat halaman pertama kali dimuat
+            showOnScroll();
 
             // Fungsi untuk mengaktifkan tautan yang sesuai dengan bagian yang terlihat
             function activateLink() {

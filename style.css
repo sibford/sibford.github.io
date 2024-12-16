@@ -269,7 +269,7 @@ html {
   margin: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.6s ease, transform 0.6s ease; 
+  transition: opacity 0.6s ease, transform 0.6s ease;
   background-color: #f4f4f4;
   text-align: center;
   position: relative;
@@ -279,7 +279,7 @@ html {
   /* touch-action: manipulation; memastikan interaksi pada perangkat sentuh */
 }
 
-.product-container section div.show{
+.product-container section div.show {
   opacity: 1;
   transform: translateY(0);
 }
@@ -324,7 +324,7 @@ html {
 
 /* hover dan sentuh */
 .product-container section div:hover i,
-.product-container section div:active i{
+.product-container section div:active i {
   color: #0056b3;
   transform: rotate(15deg); /*efek rotasi*/
 }
@@ -384,11 +384,10 @@ html {
   }
 }
 
-
 /* style blog */
 .blog-container {
-  max-width: 100%;
-  margin: 0 auto;
+  max-width: 1100px;
+  margin: 30px auto;
   text-align: center;
   padding: 40px 20px;
   background-color: #fff;
@@ -415,7 +414,7 @@ html {
 
 .blog-container header p.paragraf-blog {
   font-size: 1rem;
-  color: #444;
+  color: #666;
   margin-bottom: 30px;
 }
 
@@ -430,7 +429,18 @@ html {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Pastikan tinggi card penuh */
+}
+
+.snippet.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .snippet:hover {
@@ -447,19 +457,22 @@ html {
 .snippet-txt {
   padding: 20px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .isi-blog {
   font-size: 1.4rem;
   color: #333;
-  margin-bottom: 10px;
 }
 
 .paragraf-blog {
   font-size: 1rem;
   color: #666;
-  margin-bottom: 20px;
   line-height: 1.6;
+  flex-grow: 1; /* Isi ruang kosong di dalam card */
+  margin-bottom: 20px; /* Jarak antar teks dan tombol */
 }
 
 .btn-blog {
@@ -470,6 +483,8 @@ html {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: auto; /* Jaga agar tombol tetap di bawah */
+  display: inline-block; /* Pastikan tombol tetap muncul */
 }
 
 .btn-blog a.read-more {
@@ -483,6 +498,10 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+  .blog-index{
+    grid-template-columns: 1fr;
+  }
+
   .blog-container .snippet {
     width: 48%;
   }
@@ -502,8 +521,17 @@ html {
 .snippet figure {
   padding: 0;
   margin: 0;
-  width: 100%;
   overflow: hidden;
+}
+
+.snippet figure img{
+  width: 100%;
+  transform: rotate(10deg) scale(1.4);
+  transition: 0.3s ease-in-out;
+}
+
+.snippet:hover figure img{
+  transform: rotate(0) scale(1.1);
 }
 
 .snippet-img {
