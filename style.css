@@ -204,17 +204,9 @@ html {
 .showcase {
   display: flex;
   justify-content: space-between;
-  max-width: full;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2em;
-  opacity: 0;
-  transform: translateX(-100%); /* Geser ke kiri default */
-  transition: all 0.6s ease-in-out; /* Animasi smooth */
-}
-
-.showcase.show {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .showcase-image,
@@ -232,22 +224,12 @@ html {
 
 .showcase:nth-child(even) {
   background-color: #f0f0f0;
-  transform: translateX(100%);
-}
-
-.showcase:nth-child(even).show {
-  transform: translateX(0);
 }
 
 @media screen and (max-width: 768px) {
   .showcase {
     flex-direction: column;
     padding: 1em 2em;
-    transform: translateY(30%);
-  }
-
-  .showcase.show {
-    transform: translateY(0);
   }
 
   .showcase-image,

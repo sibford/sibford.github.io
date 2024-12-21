@@ -235,29 +235,6 @@
             const offset = 50; // Offset jika ada header tetap
             const elements = document.querySelectorAll(".product-container section div");
             const blogElements = document.querySelectorAll(".snippet");
-            const showcases = document.querySelectorAll(".showcase"); // Ambil semua elemen dengan class .showcase
-
-            const handleShowcaseScroll = () => {
-                showcases.forEach((showcase, index) => {
-                    const rect = showcase.getBoundingClientRect();
-                    console.log(`Showcase ${index}:`, rect.top, rect.bottom);
-
-                    // Periksa apakah elemen masuk ke viewport
-                    if (rect.top < window.innerHeight - 50 && rect.bottom > 50) {
-                        setTimeout(() => {
-                            showcase.classList.add("show");
-                        }, index * 200); // Tambahkan jeda animasi
-                    } else {
-                        showcase.classList.remove("show"); // Hilangkan animasi jika keluar viewport
-                    }
-                });
-            };
-
-            // Tambahkan event listener scroll untuk animasi showcase
-            window.addEventListener("scroll", handleShowcaseScroll);
-
-            // Jalankan sekali saat halaman dimuat
-            handleShowcaseScroll();
 
 
             // Fungsi untuk menambahkan animasi ke elemen yang muncul di viewport
