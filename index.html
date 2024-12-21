@@ -7,6 +7,28 @@
     <title>Sibford</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <!-- HTML Meta Tags -->
+    <title>Sibford Active English</title>
+    <meta name="description" content="One Of The English Courses in Madiun City">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://www.sibford.my.id/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sibford Active English">
+    <meta property="og:description" content="One Of The English Courses in Madiun City">
+    <meta property="og:image"
+        content="https://opengraph.b-cdn.net/production/images/553b03e4-7ee1-44d5-9b8f-0371a8d55c82.jpg?token=09UUtjMsHmN63wnBxbxtA4Lfj9VNlJJSkZ0k2GUkvno&height=1800&width=1200&expires=33270794563">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="sibford.my.id">
+    <meta property="twitter:url" content="https://www.sibford.my.id/">
+    <meta name="twitter:title" content="Sibford Active English">
+    <meta name="twitter:description" content="One Of The English Courses in Madiun City">
+    <meta name="twitter:image"
+        content="https://opengraph.b-cdn.net/production/images/553b03e4-7ee1-44d5-9b8f-0371a8d55c82.jpg?token=09UUtjMsHmN63wnBxbxtA4Lfj9VNlJJSkZ0k2GUkvno&height=1800&width=1200&expires=33270794563">
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 </head>
 
 <body>
@@ -132,7 +154,8 @@
                     </figure>
                     <div class="snippet-txt">
                         <h2 class="isi-blog">Listening</h2>
-                        <p class="paragraf-blog">Listening materials are designed to help individuals achieve their goals by obtaining certificates and improving their skills</p>
+                        <p class="paragraf-blog">Listening materials are designed to help individuals achieve their
+                            goals by obtaining certificates and improving their skills</p>
                         <button type="button" class="btn-blog"><a href="/listening.html" class="read-more">Read
                                 More</a></button>
                     </div>
@@ -143,7 +166,8 @@
                     </figure>
                     <div class="snippet-txt">
                         <h2 class="isi-blog">Reading</h2>
-                        <p class="paragraf-blog">Reading activities are structured to enhance your English reading skills while focusing on accuracy and comprehension</p>
+                        <p class="paragraf-blog">Reading activities are structured to enhance your English reading
+                            skills while focusing on accuracy and comprehension</p>
                         <button type="button" class="btn-blog"><a href="/reading.html" class="read-more">Read
                                 More</a></button>
                     </div>
@@ -154,7 +178,8 @@
                     </figure>
                     <div class="snippet-txt">
                         <h2 class="isi-blog">Writing</h2>
-                        <p class="paragraf-blog">Writing materials are designed to document and reinforce what you've learned, ensuring you retain essential knowledge</p>
+                        <p class="paragraf-blog">Writing materials are designed to document and reinforce what you've
+                            learned, ensuring you retain essential knowledge</p>
                         <button type="button" class="btn-blog"><a href="/writing.html" class="read-more">Read
                                 More</a></button>
                     </div>
@@ -210,7 +235,32 @@
             const offset = 50; // Offset jika ada header tetap
             const elements = document.querySelectorAll(".product-container section div");
             const blogElements = document.querySelectorAll(".snippet");
+            const showcases = document.querySelectorAll(".showcase"); // Ambil semua elemen dengan class .showcase
 
+            const handleShowcaseScroll = () => {
+                showcases.forEach((showcase, index) => {
+                    const rect = showcase.getBoundingClientRect();
+                    console.log(`Showcase ${index}:`, rect.top, rect.bottom);
+
+                    // Periksa apakah elemen masuk ke viewport
+                    if (rect.top < window.innerHeight - 50 && rect.bottom > 50) {
+                        setTimeout(() => {
+                            showcase.classList.add("show");
+                        }, index * 200); // Tambahkan jeda animasi
+                    } else {
+                        showcase.classList.remove("show"); // Hilangkan animasi jika keluar viewport
+                    }
+                });
+            };
+
+            // Tambahkan event listener scroll untuk animasi showcase
+            window.addEventListener("scroll", handleShowcaseScroll);
+
+            // Jalankan sekali saat halaman dimuat
+            handleShowcaseScroll();
+
+
+            // Fungsi untuk menambahkan animasi ke elemen yang muncul di viewport
             const handleScroll = () => {
                 elements.forEach((el, index) => {
                     const rect = el.getBoundingClientRect();
@@ -227,26 +277,29 @@
                 });
             };
 
-            // tambahkan event listener scroll
+            // Event scroll untuk animasi produk
             window.addEventListener("scroll", handleScroll);
 
             // Jalankan sekali saat halaman pertama kali dimuat
             handleScroll();
 
+
+            // Fungsi untuk menambahkan animasi ke elemen blog
             const showOnScroll = () => {
                 blogElements.forEach((el2, index2) => {
                     const rect = el2.getBoundingClientRect();
 
-                    if (rect.top < window.innerHeight - 100) {
+                    if (rect.top < window.innerHeight - 50 && rect.bottom > 50) {
                         setTimeout(() => {
                             el2.classList.add("show");
                         }, index2 * 200); // Tambahkan delay 1 detik per elemen
                     } else {
-                        el2.classList.remove("show"); // Hilangkan jika keluar viewport
+                        el2.classList.remove("show"); // Hilangkan animasi jika keluar viewport
                     }
                 });
             };
 
+            // Event scroll untuk animasi blog
             window.addEventListener("scroll", showOnScroll);
 
             // Jalankan saat halaman pertama kali dimuat
@@ -283,7 +336,7 @@
             // Panggil fungsi untuk setiap scroll
             window.addEventListener("scroll", activateLink);
 
-            // Animasi scroll ketika tautan di-klik
+            // Animasi scroll halus ketika tautan menu diklik
             navLinks.forEach((link) => {
                 link.addEventListener("click", function (event) {
                     event.preventDefault(); // Mencegah perilaku klik bawaan
