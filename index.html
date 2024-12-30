@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sibford</title>
+    <title>Sibford Active English</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="icon" href="img/sibford2.png" type="image/x-icon">
     <!-- HTML Meta Tags -->
     <title>Sibford Active English</title>
     <meta name="description" content="One Of The English Courses in Madiun City">
@@ -34,7 +35,7 @@
 <body>
 
     <!-- Navbar -->
-    <div class="container">
+    <div class="container fade-in">
         <header id="nav-header">
             <label for="hamburger">&#9776;</label>
             <input type="checkbox" id="hamburger">
@@ -55,7 +56,7 @@
 
     <!-- Hero -->
     <section id="home">
-        <div class="hero-container">
+        <div class="hero-container fade-in">
             <div class="hero-text">
                 <h1>Sibford Active English</h1>
                 <p>One Of The English Courses in Madiun City</p>
@@ -68,7 +69,7 @@
     </section>
 
     <!-- Showcase -->
-    <section class="showcase" id="about">
+    <section class="showcase fade-in" id="about">
         <div class="showcase-image">
             <img src="img/about.jpg" alt="">
         </div>
@@ -188,7 +189,7 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-in">
         <!-- Contact Info -->
         <div class="contact-info">
             <h2>Contact Us</h2>
@@ -224,7 +225,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="footer-container">
+    <footer class="footer-container fade-in">
         <p>&copy; 2024 Sibford Active English. All rights reserved.</p>
     </footer>
 
@@ -233,54 +234,43 @@
             const sections = document.querySelectorAll("section"); // Ambil semua bagian halaman
             const navLinks = document.querySelectorAll("#nav-header nav ul li a"); // Ambil semua tautan di navigasi
             const offset = 50; // Offset jika ada header tetap
-            const elements = document.querySelectorAll(".product-container section div");
-            const blogElements = document.querySelectorAll(".snippet");
+            const fadeInElements = document.querySelectorAll(".fade-in"); // Pilih semua elemen dengan kelas 'fade-in'
+            const animatedElements = document.querySelectorAll(".product-container section div, .blog-container .snippet");
 
+    // Intersection Observer untuk memantau elemen yang masuk ke viewport
+    const observer2 = new IntersectionObserver(
+        (entries2) => {
+            entries2.forEach((entry2, index2) => {
+                if (entry2.isIntersecting) {
+                    // Tambahkan animasi dengan delay berdasarkan urutan
+                    setTimeout(() => {
+                        entry2.target.classList.add("show");
+                    }, index2 * 400); // Muncul satu per satu dengan jeda
 
-            // Fungsi untuk menambahkan animasi ke elemen yang muncul di viewport
-            const handleScroll = () => {
-                elements.forEach((el, index) => {
-                    const rect = el.getBoundingClientRect();
+                    // Hentikan observasi untuk elemen ini agar animasi hanya muncul sekali
+                    observer2.unobserve(entry2.target);
+                }
+            });
+        },
+        {
+            threshold: 0.1, // Trigger animasi ketika 10% elemen terlihat
+        }
+    );
 
-                    // cek apakah elemen masuk viewport
-                    if (rect.top < window.innerHeight - 50 && rect.bottom > 50) {
-                        // tambahkan delay animasi berdasarkan urutan
-                        setTimeout(() => {
-                            el.classList.add("show");
-                        }, index * 200); // elemen muncul satu persatu dengan jeda
-                    } else {
-                        el.classList.remove("show"); // hilangkan jika keluar viewport
+    // Mulai observasi semua elemen
+    animatedElements.forEach((el2) => observer2.observe(el2));
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show"); // Tambahkan kelas 'show' saat elemen terlihat
+                        observer.unobserve(entry.target); // Hentikan observasi setelah elemen terlihat
                     }
                 });
-            };
+            }, { threshold: 0.1, }); // Elemen terlihat saat 10% dari tinggi elemen masuk viewport
 
-            // Event scroll untuk animasi produk
-            window.addEventListener("scroll", handleScroll);
-
-            // Jalankan sekali saat halaman pertama kali dimuat
-            handleScroll();
-
-
-            // Fungsi untuk menambahkan animasi ke elemen blog
-            const showOnScroll = () => {
-                blogElements.forEach((el2, index2) => {
-                    const rect = el2.getBoundingClientRect();
-
-                    if (rect.top < window.innerHeight - 50 && rect.bottom > 50) {
-                        setTimeout(() => {
-                            el2.classList.add("show");
-                        }, index2 * 200); // Tambahkan delay 1 detik per elemen
-                    } else {
-                        el2.classList.remove("show"); // Hilangkan animasi jika keluar viewport
-                    }
-                });
-            };
-
-            // Event scroll untuk animasi blog
-            window.addEventListener("scroll", showOnScroll);
-
-            // Jalankan saat halaman pertama kali dimuat
-            showOnScroll();
+            // Observasi semua elemen dengan kelas fade-in
+            fadeInElements.forEach((el) => observer.observe(el));
 
             // Fungsi untuk mengaktifkan tautan yang sesuai dengan bagian yang terlihat
             function activateLink() {

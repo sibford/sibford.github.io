@@ -14,6 +14,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Awal elemen tidak terlihat */
+.fade-in {
+  opacity: 0; 
+  transform: translateY(30px); /* Mulai dari bawah */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transisi animasi */
+}
+
+/* Ketika elemen terlihat */
+.fade-in.show {
+  opacity: 1; 
+  transform: translateY(0); /* Kembali ke posisi awal */
+}
+
 /* Style navbar */
 .container {
   background-color: rgb(255, 255, 255);
