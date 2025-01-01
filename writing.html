@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing</title>
     <link rel="stylesheet" href="styles4.css">
+    <link rel="icon" href="img/sibford2.png" type="image/x-icon">
 </head>
 
 <body>
@@ -31,14 +32,14 @@
 
     <!-- Header Section -->
     <div class="writing-header">
-        <h1 class="header">Writing Practice for English Tests</h1>
-        <p class="paragraph-header">Boost your writing skills with focused exercises for TOEFL, TOEIC, and IELTS.</p>
+        <h1 class="header fade-in">Writing Practice for English Tests</h1>
+        <p class="paragraph-header fade-in">Boost your writing skills with focused exercises for TOEFL, TOEIC, and IELTS.</p>
     </div>
 
     <!-- Listening Content Section -->
     <div class="writing-content">
         <!-- TOEFL Listening Section -->
-        <section class="writing-section">
+        <section class="writing-section fade-in">
             <div class="writing-text">
                 <h2>TOEFL Writing Practice</h2>
                 <p>Develop your TOEFL writing skills with tasks that include:</p>
@@ -50,7 +51,7 @@
         </section>
 
         <!-- TOEIC Listening Section -->
-        <section class="writing-section">
+        <section class="writing-section fade-in">
             <div class="writing-text">
                 <h2>TOEIC Writing Practice</h2>
                 <p>Improve your TOEIC writing with exercises on business topics, focusing on:</p>
@@ -62,7 +63,7 @@
         </section>
 
         <!-- Additional Listening Exercises -->
-        <section class="writing-section">
+        <section class="writing-section fade-in">
             <div class="writing-text">
                 <h2>IELTS Writing Exercises</h2>
                 <p>Prepare for the IELTS writing test with tasks that cover:</p>
@@ -83,6 +84,23 @@
         document.addEventListener("DOMContentLoaded", function () {
             const navLinks = document.querySelectorAll("#nav-header nav ul li a"); // Ambil semua tautan navigasi
             const currentPath = window.location.pathname; // Ambil path URL saat ini
+            const fadeInElements4 = document.querySelectorAll(".fade-in"); // Pilih semua elemen dengan kelas 'fade-in'
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    }
+                })
+            },
+                {
+                    threshold: 0.1,
+                }
+            );
+
+            // Observasi semua elemen dengan kelas 'fade-in'
+            fadeInElements4.forEach((el) => observer.observe(el));
     
             navLinks.forEach(link => {
                 // Jika href link cocok dengan path URL, tambahkan class "active"

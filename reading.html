@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reading</title>
     <link rel="stylesheet" href="styles3.css">
+    <link rel="icon" href="img/sibford2.png" type="image/x-icon">
 </head>
 
 <body>
@@ -31,14 +32,14 @@
 
     <!-- Header Section -->
     <div class="reading-header">
-        <h1 class="header">Reading Practice for English Tests</h1>
-        <p class="paragraph-header">Sharpen your reading skills for TOEFL, TOEIC, and IELTS with our specially designed practice materials.</p>
+        <h1 class="header fade-in">Reading Practice for English Tests</h1>
+        <p class="paragraph-header fade-in">Sharpen your reading skills for TOEFL, TOEIC, and IELTS with our specially designed practice materials.</p>
     </div>
 
     <!-- Listening Content Section -->
     <div class="reading-content">
         <!-- TOEFL Listening Section -->
-        <section class="reading-section">
+        <section class="reading-section fade-in">
             <div class="reading-text">
                 <h2>TOEFL Reading Practice</h2>
                 <p>Improve your TOEFL reading with passages on academic topics and exercises focused on:</p>
@@ -51,7 +52,7 @@
         </section>
 
         <!-- TOEIC Listening Section -->
-        <section class="reading-section">
+        <section class="reading-section fade-in">
             <div class="reading-text">
                 <h2>TOEIC Reading Practice</h2>
                 <p>Build your TOEIC reading skills with materials focusing on business and workplace language, covering:</p>
@@ -64,7 +65,7 @@
         </section>
 
         <!-- Additional Listening Exercises -->
-        <section class="reading-section">
+        <section class="reading-section fade-in">
             <div class="reading-text">
                 <h2>IELTS Reading Exercises</h2>
                 <p>Practice for the IELTS reading exam with a variety of topics, focusing on:</p>
@@ -86,6 +87,23 @@
         document.addEventListener("DOMContentLoaded", function () {
             const navLinks = document.querySelectorAll("#nav-header nav ul li a"); // Ambil semua tautan navigasi
             const currentPath = window.location.pathname; // Ambil path URL saat ini
+            const fadeInElements3 = document.querySelectorAll(".fade-in"); // Pilih semua elemen dengan kelas 'fade-in'
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    }
+                })
+            },
+                {
+                    threshold: 0.1,
+                }
+            );
+
+            // Observasi semua elemen dengan kelas 'fade-in'
+            fadeInElements3.forEach((el) => observer.observe(el));
     
             navLinks.forEach(link => {
                 // Jika href link cocok dengan path URL, tambahkan class "active"

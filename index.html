@@ -58,9 +58,9 @@
     <section id="home">
         <div class="hero-container fade-in">
             <div class="hero-text">
-                <h1>Sibford Active English</h1>
-                <p>One Of The English Courses in Madiun City</p>
-                <a href="https://wa.me/6282245364499?text=Assalamu'alaikum%20Sibford%20Active%20English,%20saya%20ingin%20bertanya%20mengenai%20informasi%20pendaftaran%20les%20Bahasa%20Inggris"
+                <h1 class="fade-in">Sibford Active English</h1>
+                <p class="fade-in">One Of The English Courses in Madiun City</p>
+                <a class="fade-in" href="https://wa.me/6282245364499?text=Assalamu'alaikum%20Sibford%20Active%20English,%20saya%20ingin%20bertanya%20mengenai%20informasi%20pendaftaran%20les%20Bahasa%20Inggris"
                     target="_blank" rel="noopener noreferrer">
                     Daftar Sekarang
                 </a>
@@ -74,27 +74,27 @@
             <img src="img/about.jpg" alt="">
         </div>
         <div class="showcase-text">
-            <h1>General English & Special Program</h1>
-            <p>Sibford Active English is an English language course institution located on Jalan Margobawero Barat No.
+            <h1 class="fade-in">General English & Special Program</h1>
+            <p class="fade-in">Sibford Active English is an English language course institution located on Jalan Margobawero Barat No.
                 33, Madiun City, East Java. This institution provides English language learning programs for various
                 levels, from elementary school, middle school, high school, to employees and the general public. In
                 addition, there are also tutoring services available in other subjects such as Mathematics, Physics,
                 Science and Accounting, making it the right choice for a variety of educational needs</p>
-            <p>This course offers flexibility in study time that can be adjusted to suit the student's schedule. We also
+            <p class="fade-in">This course offers flexibility in study time that can be adjusted to suit the student's schedule. We also
                 serve requests for special materials that suit school or work needs. With the face-to-face learning
                 method, students get direct learning experience from experienced and professional teachers, ensuring the
                 best quality of education to support their future success</p>
         </div>
     </section>
-    <section class="showcase" id="about2">
+    <section class="showcase fade-in" id="about2">
         <div class="showcase-text">
-            <h1>Prepare for the Future with Excellent English Skills</h1>
-            <p>Learn English with a comprehensive approach, including conversation skills, TOEFL, TOEIC and IELTS test
+            <h1 class="fade-in">Prepare for the Future with Excellent English Skills</h1>
+            <p class="fade-in">Learn English with a comprehensive approach, including conversation skills, TOEFL, TOEIC and IELTS test
                 preparation. With systematically designed material, we are here to help you achieve your academic and
                 professional targets. Realizing that education is not just for today, but as preparation for the future,
                 we are committed to providing the best learning experience through interactive methods and experienced
                 teachers</p>
-            <p>We believe that nothing is impossible if you prepare well. Here, you will get a structured study guide,
+            <p class="fade-in">We believe that nothing is impossible if you prepare well. Here, you will get a structured study guide,
                 both for academic and professional career needs. Be part of a learning journey that supports your
                 success at a global level</p>
         </div>
@@ -105,7 +105,7 @@
 
     <!-- Product -->
     <div class="product-container">
-        <header>
+        <header class="fade-in">
             <h1>Why Choose Us</h1>
             <hr>
             <p class="main-service">Delivering excellence every time</p>
@@ -140,7 +140,7 @@
     <!-- Blog -->
     <section id="blog">
         <div class="blog-container">
-            <header>
+            <header class="fade-in">
                 <h1 class="judul-blog">Activities</h1>
                 <hr>
                 <p class="paragraf-blog">Discover a variety of exciting activities designed to enhance your skills,
@@ -192,24 +192,24 @@
     <section id="contact" class="fade-in">
         <!-- Contact Info -->
         <div class="contact-info">
-            <h2>Contact Us</h2>
+            <h2 class="fade-in">Contact Us</h2>
             <!-- Email -->
-            <div class="contact-item">
+            <div class="contact-item fade-in">
                 <i class="fas fa-envelope"></i>
                 <a href="mailto:andre@lezats.com">madiunsibford@gmail.com</a>
             </div>
             <!-- Phone -->
-            <div class="contact-item">
+            <div class="contact-item fade-in">
                 <i class="fas fa-phone"></i>
                 <a href="https://wa.me/6282245364499">+62 822-4536-4499</a>
             </div>
             <!-- Facebook -->
-            <div class="contact-item">
+            <div class="contact-item fade-in">
                 <i class="fab fa-facebook"></i>
                 <a href="https://www.facebook.com/sibford.madiun">Sibford Madiun</a>
             </div>
             <!-- Address -->
-            <div class="contact-item">
+            <div class="contact-item fade-in">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>Jl. Margayasa no. 33, Madiun, East Java</span>
             </div>
@@ -225,7 +225,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="footer-container fade-in">
+    <footer class="footer-container">
         <p>&copy; 2024 Sibford Active English. All rights reserved.</p>
     </footer>
 
@@ -259,6 +259,7 @@
 
     // Mulai observasi semua elemen
     animatedElements.forEach((el2) => observer2.observe(el2));
+
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
